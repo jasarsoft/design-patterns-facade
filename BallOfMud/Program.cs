@@ -1,5 +1,5 @@
-﻿using System;
-using BallOfMud.Services;
+﻿using BallOfMud.Services;
+using System;
 
 namespace BallOfMud
 {
@@ -7,17 +7,12 @@ namespace BallOfMud
     {
         static void Main(string[] args)
         {
-            BigClass bigClass = new BigClass();
-            
-            bigClass.SetValueI(3);
-            
-            bigClass.IncrementI();
-            bigClass.IncrementI();
-            bigClass.IncrementI();
-            
-            bigClass.DecrememntI();
+            BigClassFacade bigClass = new BigClassFacade();
 
-            Console.WriteLine($"Final Number : {bigClass.GetValueB()}");
+            bigClass.IncreaseBy(50);
+            bigClass.DecreaseBy(20);
+
+            Console.WriteLine($"Final Number : {bigClass.GetCurrentValue()}");
         }
     }
 }
